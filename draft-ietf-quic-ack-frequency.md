@@ -253,7 +253,7 @@ Ack Delay field.
 
 # Multiple ACK_FREQUENCY Frames {#multiple-frames}
 
-An endpoint can send multiple ACK_FREQUENCY frames, and each one of them can
+An endpoint can send multiple ACK_FREQUENCY frames in the same connection, and each one of them can
 have different values in all fields. An endpoint MUST use a sequence number of 0
 for the first ACK_FREQUENCY frame it constructs and sends, and a strictly
 increasing value thereafter.
@@ -354,12 +354,11 @@ acknowledgements.
 
 An endpoint SHOULD send an immediate acknowledgement when a packet marked
 with the ECN Congestion Experienced (CE) codepoint in the IP header is
-received and the previously received packet was not marked CE.
-
+received and the previously received packet was not marked CE {{?RFC3168}}.
 Doing this maintains the peer's response time to congestion events, while also
 reducing the ACK rate compared to {{Section 13.2.1 of QUIC-TRANSPORT}} during
 extreme congestion or when peers are using DCTCP {{?RFC8257}} or other
-congestion controllers that mark more frequently than classic ECN {{?RFC3168}}.
+congestion controllers (e.g. {{I-D.ietf-tsvwg-aqm-dualq-coupled}} that mark more frequently than classic ECN {{?RFC3168}}.
 
 
 ## Batch Processing of Packets {#batch}
@@ -418,11 +417,11 @@ the network, and will suffer degraded performance if acknowledgments are delayed
 excessively.
 
 To enable a sender to respond to potential network congestion, a sender SHOULD
-cause a receiver to send an acknowledgement at least once per RTT if there are
+cause a receiver to send an acknowledgement at least once per round-trip time (RTT) if there are
 unacknowledged ack-eliciting packets in flight. A sender can accomplish this by
-sending an IMMEDIATE_ACK frame once per round-trip time (RTT), or it can set the
+sending an IMMEDIATE_ACK frame once per RTT, or it can set the
 Ack-Eliciting Threshold and Request Max Ack Delay values to be no more than a
-congestion window and an estimated RTT, respectively.
+congestion window and an estimated minimum RTT, respectively.
 
 ## Burst Mitigation
 
@@ -452,11 +451,11 @@ rely on an accurate RTT estimate, such as time-threshold loss detection (Section
 will be less responsive to changes in the path's RTT, resulting in either
 delayed or unnecessary packet transmissions.
 
-To limit these consequences of reduced acknowledgement frequency, a sender
-SHOULD cause a receiver to send an acknowledgement at least once per RTT if
+To limit the consequences of reduced acknowledgement frequency, a sender
+SHOULD cause a receiver to send an acknowledgement at least once per round-trip time
+(RTT) if
 there are unacknowledged ack-eliciting packets in flight. A sender can
-accomplish this by sending an IMMEDIATE_ACK frame once per round-trip time
-(RTT), or it can set the Ack-Eliciting Threshold and Request Max Ack Delay
+accomplish this by sending an IMMEDIATE_ACK frame once per RTT, or it can set the Ack-Eliciting Threshold and Request Max Ack Delay
 values to be no more than a congestion window and an estimated RTT,
 respectively.
 
@@ -479,7 +478,13 @@ new ACK_FREQUENCY frame immediately upon confirmation of connection migration.
 
 
 # Security Considerations
+
 TBD.
+
+QUIC ACK_FREQUENCY frames are protected by the normal quic security mechanisms {{QUIC-TRANSPORT}}). 
+Potentially an ACK_FREQUENCY frame could allow a DOS attack on the return path of a standards-compliant 
+receiver by a malicious/poorly configured server, however the sender has control of many aspects of 
+the receiver behaviour and this as a threat from a well-configured sender. 
 
 # IANA Considerations {#iana}
 TBD.
