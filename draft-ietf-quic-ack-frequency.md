@@ -119,20 +119,25 @@ endpoint performance in the following ways:
 - Similarly, receiving and processing UDP packets can also be CPU intensive, and
   reducing acknowledgement frequency reduces this cost at a data sender.
 
-- For severely asymmetric link technologies, such as DOCSIS, LTE, and satellite
-  links, connection throughput in the forward path can become constrained
-  when the reverse path is filled by acknowledgment packets. When traversing
-  such links, reducing the number of acknowledgments can achieve higher
-  connection throughput.
+- Acknowledgments also incur forwarding costs and contribute to link utilization. 
+This can impact performance over network linkls with constaints{{RFC3449}}, e.g.,
+where forward and return packets consume radio resources from a common pool,
+where there is a severe assymetry of capacity, or where the tranmsmission cost
+is significnatly higher in one direction than another. This can result in
+the connection throughput in the forward path becoming constrained by transmssion
+of acknowledgment packets in the reverse direction. Examples of such
+link technologies include  DOCSIS, LTE, and satellite links. When a path includes
+  such links, reducing the rate of acknowledgments can achieve a higher
+  connection throughput and/or more effecient use of link resources.
 
-- The rate of acknowledgment packets can impact link efficiency, including
-  transmission opportunities or battery life.
+- For some types of link, the rate of acknowledgment packets can impact overall 
+link efficiency, including energy consumption or battery life.
 
 
 As discussed in {{implementation}} however, there can be undesirable consequences
 to congestion control and loss recovery if a receiver uniltaerally reduces the
 acknowledgment frequency. A sender's constraints on the acknowledgement
-frequency need to be taken into account to maximize congestion controller and
+frequency need to be taken into account to maximize the congestion controller and
 loss recovery performance.
 
 {{QUIC-TRANSPORT}} currently specifies a simple delayed acknowledgement
