@@ -420,7 +420,7 @@ To enable a sender to respond to potential network congestion, a sender SHOULD
 cause a receiver to send an acknowledgement at least once per round-trip time (RTT) if there are
 unacknowledged ack-eliciting packets in flight. A sender can accomplish this by
 sending an IMMEDIATE_ACK frame once per RTT, or it can set the
-Ack-Eliciting Threshold and Request Max Ack Delay values to be respectively no more than a
+Ack-Eliciting Threshold and Request Max Ack Delay values to be respectively smaller than a
 congestion window and no longer than the estimated minimum RTT.
 
 ## Burst Mitigation
@@ -457,7 +457,7 @@ SHOULD cause a receiver to send an acknowledgement at least once per round-trip 
 there are unacknowledged ack-eliciting packets in flight. A sender can
 accomplish this by sending an IMMEDIATE_ACK frame once per RTT, or it can set the 
 Ack-Eliciting Threshold and Request Max Ack Delay
-values to be respectively no more than a congestion window and nolonger than 
+values to be respectively smaller than a congestion window and nolonger than 
 the estimated minimum RTT.
 
 A sender might use timers to detect loss of PMTUD probe packets. A sender SHOULD
