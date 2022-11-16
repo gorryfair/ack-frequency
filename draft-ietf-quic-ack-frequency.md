@@ -123,7 +123,7 @@ endpoint performance in the following ways:
   links, connection throughput in the forward path can become constrained
   when the reverse path is filled by acknowledgment packets. When traversing
   such links, reducing the number of acknowledgments can achieve higher
-  connection throughput.
+  connection throughput {{DOI.10.1002/sat.1466}}.
 
 - The rate of acknowledgment packets can impact link efficiency, including
   transmission opportunities or battery life.
