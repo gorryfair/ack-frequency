@@ -482,7 +482,7 @@ new ACK_FREQUENCY frame immediately upon confirmation of connection migration.
 
 TBD.
 
-QUIC ACK_FREQUENCY frames are protected by the normal quic security mechanisms {{QUIC-TRANSPORT}}). 
+QUIC ACK_FREQUENCY frames are protected by the normal QUIC security mechanisms {{QUIC-TRANSPORT}}). 
 Potentially an ACK_FREQUENCY frame could allow a DOS attack on the return path of a standards-compliant 
 receiver by a malicious/poorly configured server, however the sender has control of many aspects of 
 the receiver behaviour and this as a threat from a well-configured sender. 
