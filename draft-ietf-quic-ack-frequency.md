@@ -482,10 +482,10 @@ new ACK_FREQUENCY frame immediately upon confirmation of connection migration.
 
 TBD.
 
-QUIC ACK_FREQUENCY frames are protected by the normal QUIC security mechanisms {{QUIC-TRANSPORT}}). 
-Potentially an ACK_FREQUENCY frame could allow a DOS attack on the return path of a standards-compliant 
-receiver by a malicious/poorly configured server, however the sender has control of many aspects of 
-the receiver behaviour and this as a threat from a well-configured sender. 
+AN Improperly configured or malicious sender could cause standards-compliant receivers to 
+acknowledge more frequently than their available resources permit, thus causing a 
+Denial Of Service (DOS) attack. However, A sender has control of many aspects of 
+the receiver behaviour and therefore there is no additional threat from a well-configured sender. 
 
 # IANA Considerations {#iana}
 TBD.
