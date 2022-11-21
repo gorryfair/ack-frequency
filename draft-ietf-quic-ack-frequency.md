@@ -421,7 +421,7 @@ cause a receiver to send an acknowledgement at least once per round-trip time (R
 unacknowledged ack-eliciting packets in flight. A sender can accomplish this by
 sending an IMMEDIATE_ACK frame once per RTT, or it can set the
 Ack-Eliciting Threshold and Request Max Ack Delay values to be respectively smaller than a
-congestion window and no longer than the estimated minimum RTT.
+congestion window and no longer than the estimated RTT.
 
 ## Burst Mitigation
 
@@ -458,7 +458,7 @@ there are unacknowledged ack-eliciting packets in flight. A sender can
 accomplish this by sending an IMMEDIATE_ACK frame once per RTT, or it can set the 
 Ack-Eliciting Threshold and Request Max Ack Delay
 values to be respectively smaller than a congestion window and no longer than 
-the estimated minimum RTT.
+the estimated RTT.
 
 A sender might use timers to detect loss of PMTUD probe packets. A sender SHOULD
 bundle an IMMEDIATE_ACK frame with any PTMUD probes to avoid triggering such
