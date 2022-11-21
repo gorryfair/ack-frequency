@@ -358,7 +358,7 @@ received and the previously received packet was not marked CE {{?RFC3168}}.
 Doing this maintains the peer's response time to congestion events, while also
 reducing the ACK rate compared to {{Section 13.2.1 of QUIC-TRANSPORT}} during
 extreme congestion or when peers are using DCTCP {{?RFC8257}} or other
-congestion controllers (e.g. {{I-D.ietf-tsvwg-aqm-dualq-coupled}} that mark more frequently than classic ECN {{?RFC3168}}.
+congestion controllers (e.g. {{I-D.ietf-tsvwg-aqm-dualq-coupled}}) that mark more frequently than classic ECN {{?RFC3168}}.
 
 
 ## Batch Processing of Packets {#batch}
@@ -457,7 +457,7 @@ SHOULD cause a receiver to send an acknowledgement at least once per round-trip 
 there are unacknowledged ack-eliciting packets in flight. A sender can
 accomplish this by sending an IMMEDIATE_ACK frame once per RTT, or it can set the 
 Ack-Eliciting Threshold and Request Max Ack Delay
-values to be respectively smaller than a congestion window and nolonger than 
+values to be respectively smaller than a congestion window and no longer than 
 the estimated minimum RTT.
 
 A sender might use timers to detect loss of PMTUD probe packets. A sender SHOULD
@@ -482,10 +482,10 @@ new ACK_FREQUENCY frame immediately upon confirmation of connection migration.
 
 TBD.
 
-AN Improperly configured or malicious sender could cause standards-compliant receivers to 
+An improperly configured or malicious sender could cause standards-compliant receivers to 
 acknowledge more frequently than their available resources permit, thus causing a 
-Denial Of Service (DOS) attack. However, A sender has control of many aspects of 
-the receiver behaviour and therefore there is no additional threat from a well-configured sender. 
+Denial Of Service (DOS) attack. However, a sender has control of many aspects of 
+the receiver behaviour and therefore, for a well-configured sender, this introduces no additional threat.
 
 # IANA Considerations {#iana}
 TBD.
