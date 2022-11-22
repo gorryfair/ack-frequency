@@ -121,7 +121,7 @@ endpoint performance in the following ways:
 
 - Some network technologies, such as DOCSIS, LTE, and satellite 
 entangle link transmission in the forward direction and return 
-directions. This occurs when both directions share capacity from a common (radio)
+directions. This occurs when both directions share capacity from a common link
 resource pool; significantly more resource is required
 to send in one direction that the other; or because design decisions result in
 much more capacity being available in one direction [RFC3449]. When traversing
