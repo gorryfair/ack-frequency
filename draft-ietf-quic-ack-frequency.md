@@ -60,6 +60,24 @@ normative:
         org: Google
         role: editor
 
+imformative:
+
+  SAT-QUIC:
+    title: "Reducing the acknowledgement frequency in IETF QUIC"
+    date: 2022-10
+    seriesinfo:
+      DOI: 10.1002/sat.1466
+      name: IJSCN    
+    author:
+      -
+        name: A. Custura
+        org: University of Aberdeen
+      -
+        name: R. Secchi
+        org: University of Aberdeen
+      -
+        name: G. Fairhurst
+        org: University of Aberdeen
 
 --- abstract
 
