@@ -138,7 +138,7 @@ endpoint performance in the following ways:
   reducing acknowledgement frequency reduces this cost at a data sender.
 
 - For some network technologies, such as DOCSIS, LTE, and satellite,
-link transmission in the forward direction may depend on transmission in the return
+link transmission in the forward direction can depend on transmission in the return
 direction. This occurs when both directions share capacity from a common link
 resource pool, or when significantly more resource is required
 to send in one direction that the other, or because design decisions result in
