@@ -137,15 +137,15 @@ endpoint performance in the following ways:
 - Similarly, receiving and processing UDP packets can also be CPU intensive, and
   reducing acknowledgement frequency reduces this cost at a data sender.
 
-- Some network technologies, such as DOCSIS, LTE, and satellite 
-entangle link transmission in the forward direction and return 
-directions. This occurs when both directions share capacity from a common link
-resource pool; significantly more resource is required
-to send in one direction that the other; or because design decisions result in
-much more capacity being available in one direction [RFC3449]. When traversing
-  this type of path, reducing the number of acknowledgments can achieve higher
-  connection throughput, lower the impact on other flows or optimise the 
-  overall use of transmission resources [REF-/doi.org/10.1002/sat.1466]. 
+- For some network technologies, such as DOCSIS, LTE, and satellite,
+link transmission in the forward direction may depend on transmission in the return
+direction. This occurs when both directions share capacity from a common link
+resource pool, or when significantly more resource is required
+to send in one direction that the other, or because design decisions result in
+much more capacity being available in one direction {{?RFC3449}}. When traversing
+this type of path, reducing the number of acknowledgments can achieve higher
+connection throughput, lower the impact on other flows or optimise the
+overall use of transmission resources {{SAT-QUIC}}.
 
 - The rate of acknowledgment packets can impact link efficiency, including
   transmission opportunities or battery life. In some cases, 
