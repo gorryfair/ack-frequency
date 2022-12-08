@@ -62,7 +62,7 @@ normative:
 
 imformative:
 
-  SAT-QUIC:
+  Cus22:
     title: "Reducing the acknowledgement frequency in IETF QUIC"
     date: 2022-10
     seriesinfo:
@@ -145,7 +145,7 @@ to send in one direction that the other, or because design decisions result in
 much more capacity being available in one direction {{?RFC3449}}. When traversing
 this type of path, reducing the number of acknowledgments can achieve higher
 connection throughput, lower the impact on other flows or optimise the
-overall use of transmission resources {{SAT-QUIC}}.
+overall use of transmission resources {{Cus22}}.
 
 - The rate of acknowledgment packets can impact link efficiency, including
   transmission opportunities or battery life. In some cases, 
